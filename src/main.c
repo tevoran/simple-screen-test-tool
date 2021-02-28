@@ -8,7 +8,7 @@ void main()
 	SDL_Init(SDL_INIT_EVERYTHING);
 
 	/*variables*/
-	SDL_Window *window=SDL_CreateWindow("Simple Screen Test Tool", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+	SDL_Window *window=SDL_CreateWindow("Simple Screen Test Tool", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, SDL_WINDOW_FULLSCREEN_DESKTOP);
 	SDL_Renderer *renderer=SDL_CreateRenderer(window, -1, 0);
 	SDL_Event event;
 
@@ -18,14 +18,14 @@ void main()
 	2 = red
 	3 = green
 	4 = blue*/
-	unsigned int color=4;
+	signed int color=0;
 	unsigned int quit=0;
 	
 	while(quit==0)
 	{
 
 		/*handling input*/
-		SDL_PollEvent(&event);
+		SDL_WaitEvent(&event);
 		switch(event.type)
 		{
 			/*closing window*/
@@ -41,45 +41,37 @@ void main()
 
 					/*choosing color towards the beginning*/
 					case SDLK_BACKSPACE:
-						if(color<1)
-						{
-							color=0;
-						}
-						else
-						{
 							color--;
-						}
+							if(color<0)
+							{
+								color=0;
+							}
 						break;
 
 					case SDLK_LEFT:
-						if(color<1)
-						{
-							color=0;
-						}
-						else
-						{
 							color--;
-						}
+							if(color<0)
+							{
+								color=0;
+							}
 						break;
 
 					/*selecting next color*/
 					case SDLK_SPACE:
 						color++;
-						if(color==5)
-						{
-							color=4;
-						}
 						break;
 
 					case SDLK_RIGHT:
 						color++;
-						if(color==5)
-						{
-							color=4;
-						}
 						break;
 				}
 				break;
+
+			/*mouse input*/
+			if(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT))
+			{
+				printf("test\n");
+			}
 		}
 
 		/*current color*/
@@ -117,14 +109,10 @@ void main()
 
 		SDL_RenderClear(renderer);
 		SDL_RenderPresent(renderer);
-		SDL_Delay(100);
-		if(color==6)
+		SDL_Delay(75);
+		if(color>=5)
 		{
-			color=5;
-		}
-		if(color==5)
-		{
-			quit=0;
+			quit=1;
 		}
 	}
 }
