@@ -8,12 +8,12 @@ Soon there will be the possibility to simply download the release version and us
 
 On Linux it is compiled by the following commands:
 
-...
+```
 mkdir build
 cd build
 cmake ..
 make
-...
+```
 
 ## usage
 
