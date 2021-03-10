@@ -65,13 +65,32 @@ void main()
 						color++;
 						break;
 				}
-				break;
+			break;
 
 			/*mouse input*/
-			if(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT))
-			{
-				printf("test\n");
-			}
+			case SDL_MOUSEBUTTONDOWN:
+				switch (event.button.button)
+				{
+					/*left click and moving forward*/
+					case SDL_BUTTON_LEFT:
+					{
+						color++;
+						break;
+					}
+
+					/*right click and moving backwards*/
+					case SDL_BUTTON_RIGHT:
+					{
+						color--;
+						if(color<0)
+						{
+							color=0;
+						}
+						break;
+					}
+				}
+			break;
+
 		}
 
 		/*current color*/
