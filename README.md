@@ -19,4 +19,4 @@ make
 
 SSTT uses the following keys for navigating between the different colors:
 
-The forward keys are "space" and "arrow right", while the backward keys are "backspace" and "arrow left". "esc" is used for ending the program but it also ends after the last color.
+The forward keys are "space", "arrow right" and the "left mouse button", while the backward keys are "backspace", "arrow left" and the "right mouse button". "esc" is used for ending the program but it also ends after the last color.
