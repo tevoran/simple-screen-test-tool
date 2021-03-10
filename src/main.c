@@ -42,18 +42,10 @@ void main()
 					/*choosing color towards the beginning*/
 					case SDLK_BACKSPACE:
 							color--;
-							if(color<0)
-							{
-								color=0;
-							}
 						break;
 
 					case SDLK_LEFT:
 							color--;
-							if(color<0)
-							{
-								color=0;
-							}
 						break;
 
 					/*selecting next color*/
@@ -82,10 +74,6 @@ void main()
 					case SDL_BUTTON_RIGHT:
 					{
 						color--;
-						if(color<0)
-						{
-							color=0;
-						}
 						break;
 					}
 				}
@@ -94,6 +82,10 @@ void main()
 		}
 
 		/*current color*/
+		if(color<0)
+		{
+			color=0;
+		}
 		switch(color)
 		{
 			/*white*/
