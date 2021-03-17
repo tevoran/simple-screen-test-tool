@@ -4,6 +4,7 @@ This is a simple tool for testing the pixels on a screen and is developed by Joh
 
 # installation
 
+## compilation
 Soon there will be the possibility to simply download the release version and use it straight away. But for now people have to compile the code. Make sure that SDL2 is installed, as it is used for the window and the color rendering. CMake is used for the compilation.
 
 On Linux it is compiled by the following commands:
@@ -14,6 +15,9 @@ cd build
 cmake ..
 make
 ```
+
+## package
+There is a .deb package available as a download. Simply download it and install it. It will install SDL2 on its own as well.
 
 ## usage
 
