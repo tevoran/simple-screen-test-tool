@@ -17,7 +17,12 @@ make
 ```
 
 ## package
-There is a .deb package available as a download. Simply download it and install it. It will install SDL2 on its own as well.
+There is a .deb package available as a download. Simply download it and install it. It will install SDL2 on its own as well. When it is installed, it is usable by using the
+
+```
+sstt
+```
+command.
 
 ## usage
 
